@@ -9,6 +9,7 @@ import utils.ScreenshotOnFailure;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
 import static utils.RandomUtil.getRandomNumber;
@@ -54,13 +55,12 @@ public class BeymenTest extends BaseTest {
         ProductPage productPage = new ProductPage(driver);
         List<WebElement> sizeInfoElements = productPage.getElements(productPage.productSizeListSelector);
         int randomNumber = getRandomNumber(sizeInfoElements.size());
-
         elementOfProduct.add(productPage.getElement(productPage.productNameSelector));
         elementOfProduct.add(productPage.getElement(productPage.productPriceSelector));
 
         sizeInfoElements.get(randomNumber).click();
         elementOfProduct.add(sizeInfoElements.get(randomNumber));
-        List<String> productPrice = List.of(productPage.getElement(productPage.productPriceSelector).getText().split(" ")); // assertion value
+        List<String> productPrice = List.of(productPage.getElementText(productPage.productPriceSelector).split(" ")); // assertion value
         productPage.writeProductInfoInAFile(elementOfProduct);
 
         // add to chart
@@ -70,21 +70,26 @@ public class BeymenTest extends BaseTest {
         // navigate to the chart
         ChartPage chartPage = new ChartPage(driver);
         productPage.getElement(productPage.goToTheChartButtonSelector).click();
-        WebElement forOneProductPrice = chartPage.getElement(chartPage.productPriceSelector);
-        List priceActualList = List.of(forOneProductPrice.getText().split(" "));
-        System.out.println(priceActualList);
-        System.out.println(productPrice);
-        //Assertion
-        float priceExpected = Float.parseFloat(productPrice.get(0));
+        String forOneProductPrice = chartPage.getElementText(chartPage.productPriceSelector);
+        List<String> priceActualList = List.of(forOneProductPrice.split(" "));
+
+        //Assertion For Price Check
         String currencyExpected = productPrice.get(1);
+        String priceExpected = productPrice.get(0);
 
-        float priceActual = Float.parseFloat((String) priceActualList.get(0));
-        String currencyActual = (String) priceActualList.get(1);
-        Assert.assertEquals(priceExpected, priceActual);
-        Assert.assertEquals(currencyExpected.toLowerCase().replace(" ", ""), currencyActual.toLowerCase().replace(" ", ""));
-        homePage.waitTime();
-        Assert.assertEquals(driver.getTitle(), homePage.pageTitle);
+        String priceActual = priceActualList.get(0).replace(",00", "");
+        String currencyActual = priceActualList.get(1);
+        Assert.assertTrue(priceExpected.equalsIgnoreCase(priceActual));
+        Assert.assertTrue(currencyExpected.replace(" ", "").equalsIgnoreCase(currencyActual.replace(" ", "")));
 
+        // adding one more product
+        chartPage.selectElementInDropDownList("2");
+        WebElement numberOfProductElement = chartPage.getElement(chartPage.numberOfProductDropdownSelector);
+        Assert.assertEquals("2", chartPage.getDOMProperty(numberOfProductElement,"value"));
+
+        // removing the products
+        chartPage.getElement(chartPage.deleteButtonSelector).click();
+        Assert.assertTrue(chartPage.getElement(chartPage.emptyMessageSelector).isDisplayed());
     }
 
 

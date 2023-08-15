@@ -40,7 +40,8 @@ public abstract class BaseTest extends DriverManager {
     public void selectRandomElement(List<WebElement> productList) {
 
         if (!productList.isEmpty()) {
-            WebElement product = productList.get(getRandomNumber(productList.size()));
+            int randomNumber = getRandomNumber(productList.size());
+            WebElement product = productList.get(randomNumber);
             scrollToTheElement(product);
             product.click();
         } else {

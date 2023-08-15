@@ -4,23 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8745123b-d090-4076-8207-a47c57835f9a" name="Changes" comment="resources added">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ChartPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/NavigationComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ProductPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/SearchPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BeymenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/DateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/DriverManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/ExcelDataUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/FileWriteUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/LoggerUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/RandomUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/ScreenshotOnFailure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="8745123b-d090-4076-8207-a47c57835f9a" name="Changes" comment="deleted.">
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ChartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ChartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BeymenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BeymenTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +56,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692138511412</updated>
-      <workItem from="1692138512594" duration="606000" />
+      <workItem from="1692138512594" duration="3933000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -94,7 +82,39 @@
       <option name="project" value="LOCAL" />
       <updated>1692138774777</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test files added">
+      <option name="closed" value="true" />
+      <created>1692139134828</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1692139134828</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test files added">
+      <option name="closed" value="true" />
+      <created>1692139147608</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1692139147608</updated>
+    </task>
+    <task id="LOCAL-00006" summary="gitignore updated">
+      <option name="closed" value="true" />
+      <created>1692139203098</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1692139203098</updated>
+    </task>
+    <task id="LOCAL-00007" summary="deleted.">
+      <option name="closed" value="true" />
+      <created>1692139229179</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1692139229179</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,6 +134,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="resources added" />
-    <option name="LAST_COMMIT_MESSAGE" value="resources added" />
+    <MESSAGE value="test files added" />
+    <MESSAGE value="gitignore updated" />
+    <MESSAGE value="deleted." />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted." />
   </component>
 </project>

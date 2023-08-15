@@ -30,6 +30,7 @@ public abstract class BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         return driver.findElement(selector);
     }
+
     public List<WebElement> getElements(By selector) { // returning element
         wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         return driver.findElements(selector);
@@ -51,6 +52,15 @@ public abstract class BasePage {
     public String getElementText(WebElement element, By selector) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         return element.findElement(selector).getText();
+    }
+
+    public String getElementText(By selector) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
+        return driver.findElement(selector).getText();
+    }
+
+    public String getDOMProperty(WebElement element,String key) {
+        return element.getDomProperty(key);
     }
 }
 
