@@ -41,9 +41,8 @@ public class BeymenTest extends BaseTest {
         String excelFilePath = "searchData.xlsx"; // searching data Excel file path
         List<String> searchTexts = ExcelDataUtil.readSearchTexts(excelFilePath);
         WebElement searchBarElement = navigationComponent.getElement(navigationComponent.searchSelector);
-        //searchBarElement.sendKeys(searchTexts.get(0));
-
-        searchBarElement.clear();
+        searchBarElement.sendKeys(searchTexts.get(0));
+        searchBarElement.sendKeys(Keys.TAB);
         searchBarElement.sendKeys(searchTexts.get(1));
         searchBarElement.sendKeys(Keys.ENTER);
 
@@ -85,7 +84,7 @@ public class BeymenTest extends BaseTest {
         // adding one more product
         chartPage.selectElementInDropDownList("2");
         WebElement numberOfProductElement = chartPage.getElement(chartPage.numberOfProductDropdownSelector);
-        Assert.assertEquals("2", chartPage.getDOMProperty(numberOfProductElement,"value"));
+        Assert.assertEquals("2", chartPage.getDOMProperty(numberOfProductElement, "value"));
 
         // removing the products
         chartPage.getElement(chartPage.deleteButtonSelector).click();
