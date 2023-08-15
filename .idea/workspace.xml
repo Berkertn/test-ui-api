@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8745123b-d090-4076-8207-a47c57835f9a" name="Changes" comment="deleted.">
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ChartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ChartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BeymenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BeymenTest.java" afterDir="false" />
+    <list default="true" id="8745123b-d090-4076-8207-a47c57835f9a" name="Changes" comment="test case is done">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692138511412</updated>
-      <workItem from="1692138512594" duration="3933000" />
+      <workItem from="1692138512594" duration="4250000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -114,7 +111,23 @@
       <option name="project" value="LOCAL" />
       <updated>1692139229179</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="test case is done">
+      <option name="closed" value="true" />
+      <created>1692142474387</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1692142474387</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test case is done">
+      <option name="closed" value="true" />
+      <created>1692142709030</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1692142709030</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +150,7 @@
     <MESSAGE value="test files added" />
     <MESSAGE value="gitignore updated" />
     <MESSAGE value="deleted." />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted." />
+    <MESSAGE value="test case is done" />
+    <option name="LAST_COMMIT_MESSAGE" value="test case is done" />
   </component>
 </project>
