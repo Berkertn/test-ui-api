@@ -36,3 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+## Resources
+/src/test/resources/ProductDetails
+/src/test/resources/ScreenshotsOfDefects
