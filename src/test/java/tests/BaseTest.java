@@ -81,4 +81,9 @@ public abstract class BaseTest extends DriverManager {
         // Use JavaScript to change the element's border style back to its original value
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.border = ''", element);
     }
+
+    public void clearTheInput(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].value = '';", element);
+    }
 }

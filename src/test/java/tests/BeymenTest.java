@@ -9,9 +9,10 @@ import utils.ScreenshotOnFailure;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
+import static utils.AssertionUtil.assertEqualText;
+import static utils.AssertionUtil.assertTrueIsDisplayed;
 import static utils.RandomUtil.getRandomNumber;
 
 public class BeymenTest extends BaseTest {
@@ -30,21 +31,22 @@ public class BeymenTest extends BaseTest {
     @Test
     public void beymenE2E() {
 
-        ArrayList elementOfProduct = new ArrayList<WebElement>();
+        ArrayList<WebElement> elementOfProduct = new ArrayList<>();
 
         HomePage homePage = new HomePage(driver);
         NavigationComponent navigationComponent = new NavigationComponent(driver);
-        Assert.assertEquals(String.format("\nURL doesnt mach with Home Page:\nExpected: %s\nActual: %s", baseUrl, driver.getCurrentUrl()), driver.getCurrentUrl(), baseUrl);
-        Assert.assertEquals(String.format("\nPage Title doesnt match with Home Page:\nExpected: %s\nActual: %s", homePage.pageTitle, driver.getTitle()), driver.getTitle(), homePage.pageTitle);
+        assertEqualText(baseUrl, driver.getCurrentUrl());
+        assertEqualText(homePage.pageTitle, driver.getTitle());
 
         //searching product
         String excelFilePath = "searchData.xlsx"; // searching data Excel file path
         List<String> searchTexts = ExcelDataUtil.readSearchTexts(excelFilePath);
         WebElement searchBarElement = navigationComponent.getElement(navigationComponent.searchSelector);
         searchBarElement.sendKeys(searchTexts.get(0));
-        searchBarElement.sendKeys(Keys.TAB);
+        clearTheInput(searchBarElement);
         searchBarElement.sendKeys(searchTexts.get(1));
         searchBarElement.sendKeys(Keys.ENTER);
+        assertEqualText(searchTexts.get(1), searchBarElement.getDomAttribute("_value"));
 
         // Select random product
         SearchPage searchPage = new SearchPage(driver);
@@ -64,7 +66,7 @@ public class BeymenTest extends BaseTest {
 
         // add to chart
         productPage.getElement(productPage.addToChartSelector).click();
-        Assert.assertTrue(productPage.getElement(productPage.successNotificationSelector).isDisplayed());
+        assertTrueIsDisplayed(productPage.getElement(productPage.successNotificationSelector));
 
         // navigate to the chart
         ChartPage chartPage = new ChartPage(driver);
@@ -78,17 +80,17 @@ public class BeymenTest extends BaseTest {
 
         String priceActual = priceActualList.get(0).replace(",00", "");
         String currencyActual = priceActualList.get(1);
-        Assert.assertTrue(priceExpected.equalsIgnoreCase(priceActual));
-        Assert.assertTrue(currencyExpected.replace(" ", "").equalsIgnoreCase(currencyActual.replace(" ", "")));
+        assertEqualText(priceExpected, priceActual);
+        assertEqualText(currencyExpected.replace(" ", ""), currencyActual.replace(" ", ""));
 
         // adding one more product
         chartPage.selectElementInDropDownList("2");
         WebElement numberOfProductElement = chartPage.getElement(chartPage.numberOfProductDropdownSelector);
-        Assert.assertEquals("2", chartPage.getDOMProperty(numberOfProductElement, "value"));
+        assertEqualText("2", chartPage.getDOMProperty(numberOfProductElement, "value"));
 
         // removing the products
         chartPage.getElement(chartPage.deleteButtonSelector).click();
-        Assert.assertTrue(chartPage.getElement(chartPage.emptyMessageSelector).isDisplayed());
+        assertTrueIsDisplayed(chartPage.getElement(chartPage.emptyMessageSelector));
     }
 
 

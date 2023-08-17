@@ -40,15 +40,6 @@ public abstract class BasePage {
         wait.withTimeout(Duration.ofSeconds(time));
     }
 
-    public void waitTime() {
-        try {
-            // Sleep for 5 seconds
-            Thread.sleep(5000); // 5000 milliseconds = 5 seconds
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
     public String getElementText(WebElement element, By selector) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(selector));
         return element.findElement(selector).getText();
